@@ -131,7 +131,7 @@ void salaCine::mostrarReservas(){
     }
     cout << endl;
     for(short int filas=0 ; filas < 15 ; filas ++){
-        cout<< left <<setw(2) << char('A'+filas) <<"--> | ";
+        cout<< left <<setw(2) << 1+filas <<"--> | ";
         for(short int columnas=0;columnas<20;columnas++){
             if(*(*(asientos+filas)+columnas)==false){
                 cout <<'-'<<"  " ;
