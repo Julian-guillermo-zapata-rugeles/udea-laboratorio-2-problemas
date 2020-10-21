@@ -10,26 +10,49 @@ Suma: 994.
 */
 
 #include <iostream>
-
+#include <math.h>
 using namespace std;
 
 void longitudCadena(char * , unsigned short int *);
+void factorMultiplicacion(int ,  unsigned int *);
 
 int main()
 {
     unsigned short int n ;
     unsigned short int longitud = 0 ;
+    unsigned int sumatoria = 0 ;
+    unsigned int auxliar_factor = 0 ;
     char cadena[100]="";
     cout << "Ingrese una cadena cadena numerica : "; cin >> cadena;
     cout << "Ingrese un numero n > 0 : "; cin >> n ;
 
     longitudCadena(cadena,&longitud);
+    cout << longitud << "longitud " << endl;
     if(longitud<=n){
-        cout << "la suma es el mismo numero : "<<cadena <<" -- "<<n<<" mayor que longitud de cadena "<<endl;
+        cout << "la suma es el mismo numero : "<< cadena ;
     }
-    cout << cadena << " -> "<< n << " -> " << longitud <<endl;
+
+    else{
+        while (longitud>=0){
+              cout << "cadena -> "<<cadena[longitud] << endl;
+              longitud--;
+            }
+        }
+
     return 0;
 }
+
+
+
+
+void factorMultiplicacion(int factor , unsigned int *auxiliar_factor){
+    unsigned int value = 1;
+    for(unsigned short int a=0 ; a < factor ; a ++){
+        value*=10;
+    }
+    *auxiliar_factor=value;
+}
+
 void longitudCadena(char *ptr_to_cadena , unsigned short int *ptr_to_longitud){
     unsigned short int longitud = 0 ;
     unsigned short int iterator = 0 ;
